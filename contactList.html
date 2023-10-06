@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Change number of students enrolled in a course </title>
+</head>
+<body>
+<h1>List all courses (JavaScript version) </h1>
+<button type="button" onclick="loadDoc()">List all courses</button>
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://localhost:5556/cgi-bin/JScript.py");
+  xhttp.send();
+}
+</script>
+<hr>
+<div id="demo">
+<p> The complete course list will appear here </p>
+</div>
+</body>
+</html>
